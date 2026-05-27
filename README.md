@@ -20,8 +20,6 @@ Dashboard — visão analítica dos dados com gráficos interativos e desempenho
 
 Links
 
-Recurso             Link
-
 Repositório        github.com/renankeskissian/tech_challenge_fase4 
 
 Aplicação          em breve
