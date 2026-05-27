@@ -19,8 +19,11 @@ Simulador — preencha os dados do paciente e obtenha a previsão do nível de o
 Dashboard — visão analítica dos dados com gráficos interativos e desempenho do modelo
 
 Links
+
 Recurso             Link
+
 Repositório        github.com/renankeskissian/tech_challenge_fase4 
+
 Aplicação          em breve
 
 Pós-Tech Data Analytics — FIAP
