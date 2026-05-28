@@ -23,6 +23,7 @@ Dependências externas:
 import streamlit as st
 import pandas as pd
 import joblib
+import numpy as np
 from utils import DropFeatures, MinMax, CustomOrdinalEncoder, CustomOneHotEncoder
 
 
@@ -104,7 +105,7 @@ mapa_mtrans  = {
 # o modelo receba os dados no mesmo formato com que foi treinado.
 
 # Faixa etária categorizada em 5 grupos (0–4)
-input_faixa_etaria = pd.cut([input_age], bins=[0, 18, 30, 45, 60, 100], labels=[0, 1, 2, 3, 4]).astype(int)[0]
+#input_faixa_etaria = pd.cut([input_age], bins=[0, 18, 30, 45, 60, 100], labels=[0, 1, 2, 3, 4]).astype(int)[0]
 
 # Versões binárias/numéricas das variáveis necessárias para as features derivadas
 input_favc_bin   = 1 if mapa_sim_nao[input_favc] == 'yes' else 0
@@ -142,7 +143,6 @@ novo_paciente = pd.DataFrame([{
     'CALC':                  mapa_freq[input_calc],
     'MTRANS':                mapa_mtrans[input_mtrans],
     'Obesity':               0,
-    'faixa_etaria':          int(input_faixa_etaria),
     'qualidade_dieta':       float(input_qualidade_dieta),
     'risco_genetico_habito': float(input_risco_genetico),
     'alcool_sedentario':     float(input_alcool_sedentario)
@@ -161,7 +161,9 @@ if st.button('🔍 Avaliar Paciente'):
     # Remove o placeholder do target antes de passar ao modelo
     paciente_transformado = paciente_transformado.drop(columns=['Obesity'])
 
-    predicao      = modelo.predict(paciente_transformado)[0]
+    predicao_bruta = modelo.predict(paciente_transformado)
+    predicao = np.ravel(predicao_bruta)[0]
+    predicao = int(predicao)
     probabilidades = modelo.predict_proba(paciente_transformado)[0]
 
     # Confiabilidade = probabilidade atribuída à classe predita
