@@ -29,7 +29,6 @@ import joblib
 import numpy as np
 from utils import DropFeatures, MinMax, CustomOrdinalEncoder, CustomOneHotEncoder
 
-st.cache_resource.clear()
 
 st.set_page_config(page_title='Dashboard - Obesidade', layout='wide')
 
