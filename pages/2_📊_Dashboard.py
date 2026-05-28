@@ -29,6 +29,8 @@ import joblib
 import numpy as np
 from utils import DropFeatures, MinMax, CustomOrdinalEncoder, CustomOneHotEncoder
 
+st.cache_resource.clear()
+
 st.set_page_config(page_title='Dashboard - Obesidade', layout='wide')
 
 st.title('📊 Dashboard Analítico — Obesidade')
@@ -162,7 +164,7 @@ with kpi2:
     st.metric(
         label='🎯 Acurácia do Modelo',
         value=f'{acuracia}%',
-        help='Percentual de classificações corretas no conjunto de teste (Voting RF + CatBoost + LGBM)'
+        help='Percentual de classificações corretas no conjunto de teste CatBoost'
     )
 
 with kpi3:
