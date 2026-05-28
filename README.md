@@ -22,6 +22,6 @@ Links
 
 Repositório        github.com/renankeskissian/tech_challenge_fase4 
 
-Aplicação          https://renan-keskissian-simulador-obesidade.streamlit.app/
+Aplicação          https://renank-simulador-obesidade.streamlit.app/
 
 Pós-Tech Data Analytics — FIAP
