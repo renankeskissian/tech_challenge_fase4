@@ -8,7 +8,7 @@ Desenvolver um modelo de Machine Learning para auxiliar equipes médicas a preve
 
 Resultado
 
-O modelo final é um Voting Classifier combinando Random Forest, CatBoost e LightGBM, atingindo 81.8% de acurácia e AUC de 0.9642 na classificação de 7 níveis de obesidade.
+O modelo final é um Voting Classifier combinando Random Forest, CatBoost e LightGBM, atingindo 86.3% de acurácia e AUC de 0.9734 na classificação de 7 níveis de obesidade.
 
 Aplicação
 
